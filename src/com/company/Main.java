@@ -5,9 +5,7 @@ import com.company.datastructure.CustomLinkedList;
 import com.company.numeric.*;
 import com.company.string.*;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -131,7 +129,7 @@ public class Main {
         System.out.println("After making it cyclic: " + linkedList.isCyclic());
         System.out.println();
 
-        System.out.println("44. Find the Nth element from a LinkedList's end");
+        System.out.println("44.1. Find the Nth element from a LinkedList's end");
         linkedList = new CustomLinkedList();
         linkedList.add(4);
         linkedList.add(8);
@@ -141,5 +139,20 @@ public class Main {
         int eleFromEnd = 4;
         System.out.printf("The %d element from end is %d", eleFromEnd, linkedList.getFromEnd(eleFromEnd));
         System.out.println();
+
+        System.out.println("45. Sort a Java LinkedList");
+        List<Integer> numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
+        System.out.println("Before sorting: " + numList);
+        Collections.sort(numList);
+        System.out.println("Afer sorting (Collections sort natural)): " + numList);
+        numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
+        Collections.sort(numList, Comparator.reverseOrder());
+        System.out.println("Afer sorting (Collections sort with Comparator)): " + numList);
+        numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
+        Collections.sort(numList, (a, b) -> (a < b) ? 1 : (a > b) ? -1 : 0);
+        System.out.println("Afer sorting (Collections sort with custom Comparator)): " + numList);
+        numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
+        numList.sort((a, b) -> b.compareTo(a));
+        System.out.println("Afer sorting (list sort with Integer.compareTo())): " + numList);
     }
 }
