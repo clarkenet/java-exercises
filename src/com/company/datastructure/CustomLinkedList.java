@@ -137,4 +137,22 @@ public class CustomLinkedList {
         }
         return false;
     }
+
+    public Integer getFromEnd(int n) {
+        if (head == null || n > iterativeSize()) {
+            return null;
+        }
+        Node slow = head;
+        Node fast = head;
+        int start = 1;
+        while (fast.next != null) {
+            fast = fast.next;
+            start++;
+
+            if (start > n) {
+                slow = slow.next;
+            }
+        }
+        return slow.value;
+    }
 }

@@ -130,5 +130,16 @@ public class Main {
         linkedList.makeCyclic();
         System.out.println("After making it cyclic: " + linkedList.isCyclic());
         System.out.println();
+
+        System.out.println("44. Find the Nth element from a LinkedList's end");
+        linkedList = new CustomLinkedList();
+        linkedList.add(4);
+        linkedList.add(8);
+        linkedList.add(3);
+        linkedList.add(16);
+        linkedList.add(1);
+        int eleFromEnd = 4;
+        System.out.printf("The %d element from end is %d", eleFromEnd, linkedList.getFromEnd(eleFromEnd));
+        System.out.println();
     }
 }
