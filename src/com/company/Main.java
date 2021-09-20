@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.array.ArrayDuplicate;
 import com.company.datastructure.CustomLinkedList;
+import com.company.datastructure.LRUCache;
 import com.company.numeric.*;
 import com.company.string.*;
 
@@ -161,5 +162,23 @@ public class Main {
         String rotation2 = "bcda";
         System.out.printf("Is \"%s\" rotation of \"%s\"? %b\n", rotation2, rotation1, StringRotation.isRotation(rotation1, rotation2));
         System.out.println();
+
+        System.out.println("49. LRU Cache");
+        LRUCache<String> cache = new LRUCache<>(3);
+        cache.refer("Hey");
+        cache.refer("Hey");
+        System.out.println(cache.display());
+        cache.refer("you");
+        cache.refer("how");
+        System.out.println(cache.display());
+        cache.refer("Hey");
+        System.out.println(cache.display());
+        cache.refer("Hi");
+        System.out.println(cache.display());
+        cache.refer("how");
+        cache.refer("!");
+        cache.refer("how");
+        cache.refer("Yes");
+        System.out.println(cache.display());
     }
 }
