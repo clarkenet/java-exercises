@@ -137,22 +137,29 @@ public class Main {
         linkedList.add(16);
         linkedList.add(1);
         int eleFromEnd = 4;
-        System.out.printf("The %d element from end is %d", eleFromEnd, linkedList.getFromEnd(eleFromEnd));
+        System.out.printf("The %d element from end is %d\n", eleFromEnd, linkedList.getFromEnd(eleFromEnd));
         System.out.println();
 
         System.out.println("45. Sort a Java LinkedList");
         List<Integer> numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
         System.out.println("Before sorting: " + numList);
         Collections.sort(numList);
-        System.out.println("Afer sorting (Collections sort natural)): " + numList);
+        System.out.println("After sorting (Collections sort natural)): " + numList);
         numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
         Collections.sort(numList, Comparator.reverseOrder());
-        System.out.println("Afer sorting (Collections sort with Comparator)): " + numList);
+        System.out.println("After sorting (Collections sort with Comparator)): " + numList);
         numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
         Collections.sort(numList, (a, b) -> (a < b) ? 1 : (a > b) ? -1 : 0);
-        System.out.println("Afer sorting (Collections sort with custom Comparator)): " + numList);
+        System.out.println("After sorting (Collections sort with custom Comparator)): " + numList);
         numList = new LinkedList<>(Arrays.asList(2, 6, 1, 0, 10, 5));
         numList.sort((a, b) -> b.compareTo(a));
-        System.out.println("Afer sorting (list sort with Integer.compareTo())): " + numList);
+        System.out.println("After sorting (list sort with Integer.compareTo())): " + numList);
+        System.out.println();
+
+        System.out.println("48. Check if two string rotation of each other");
+        String rotation1 = "abcd";
+        String rotation2 = "bcda";
+        System.out.printf("Is \"%s\" rotation of \"%s\"? %b\n", rotation2, rotation1, StringRotation.isRotation(rotation1, rotation2));
+        System.out.println();
     }
 }
