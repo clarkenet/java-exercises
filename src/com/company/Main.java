@@ -180,5 +180,11 @@ public class Main {
         cache.refer("how");
         cache.refer("Yes");
         System.out.println(cache.display());
+        System.out.println();
+
+        System.out.println("51. Rearrange fibonacci even number");
+        int[] fibonacciArray = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
+        System.out.println("Before processing: " + Arrays.toString(fibonacciArray));
+        System.out.print("After processing: " + Arrays.toString(ArrangeEvens.arrangeFibonacciEvens(fibonacciArray)));
     }
 }
