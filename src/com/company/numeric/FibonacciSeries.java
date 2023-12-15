@@ -1,8 +1,12 @@
 package com.company.numeric;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597...
+ */
 public class FibonacciSeries {
     public static List<Integer> iterative(int iterations) {
         if (iterations <= 0) {
@@ -38,5 +42,21 @@ public class FibonacciSeries {
             series.add(recursiveHelper(i));
         }
         return series;
+    }
+
+    // Gets the last number of a pretty big fibonacci series (using BigInteger)
+    public static BigInteger getFibonacci(int number) {
+        if (number == 0 || number == 1) {
+            return BigInteger.valueOf(number);
+        }
+        BigInteger a = BigInteger.ONE;
+        BigInteger b = BigInteger.ZERO;
+
+        for (int i = 2; i <= number; i++) {
+            BigInteger aux = a.add(b);
+            b = a;
+            a = aux;
+        }
+        return a;
     }
 }
