@@ -4,6 +4,7 @@ import com.company.array.ArrayDuplicate;
 import com.company.datastructure.CustomLinkedList;
 import com.company.datastructure.LRUCache;
 import com.company.numeric.*;
+import com.company.streams.DevLanguages;
 import com.company.string.*;
 
 import java.util.*;
@@ -186,5 +187,16 @@ public class Main {
         int[] fibonacciArray = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
         System.out.println("Before processing: " + Arrays.toString(fibonacciArray));
         System.out.print("After processing: " + Arrays.toString(ArrangeEvens.arrangeFibonacciEvens(fibonacciArray)));
+        System.out.println();
+
+        System.out.println("52. Developer streams");
+        var devLanguages = new DevLanguages();
+        System.out.println("- Non duplicated languages");
+        devLanguages.printNonDuplicatedLanguages();
+        System.out.println("- Most used language");
+        devLanguages.printMostUsedLanguage();
+        System.out.println("- Duplicated languages");
+        devLanguages.printDuplicatedLanguages();
+        System.out.println();
     }
 }
